@@ -27,4 +27,13 @@
 使用Arduino 自带的库管理器安装，并且参考例子
 ## 开始 vscode 
 1.建议在Arduino IDE中完成新建文件和库头文件的引入，保存在合适位置再用　vscode 打开文件夹，再打开ino文件 vscode 会自动完成arduino配置，在vscode 的右下方有关于波特率和板子型号的选择；
-2.在Arduino IDE中完成新建文件时会自动新建相应名字的文件夹。
+2.在Arduino IDE中完成新建文件时会自动新建相应名字的文件夹。  
+
+# 3. 我的开发板  
+1. 开发板的型号时ESP8266-12F
+2. 选择 
+
+|项目|配置|
+| ------- | ------- |
+|Baord|NodeMCU 1.0|
+|Flash Size|4MB FS:3MB OTA:~512KB|
