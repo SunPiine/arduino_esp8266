@@ -13,11 +13,12 @@
 另外如果使用的是GCC编译器或其它，需要修改.vscode ->c_cpp_properties->intelliSenseMode
 
 ## vscode 中的问题
-输出乱码（关于中文） ：
+1.输出乱码（关于中文） ：
 > 找到 C:\User\YourName\.vscode\extensions\vsciot-vscode.vscode-arduino-0.2.29\out\src\common\util.js
 > 找到215 行，关于os.platform 的 if 语句块 ，整个注释掉。
 > 文件地址和自己的电脑用户名还有arduino 版本号有关
-编辑 ino 文件过程中大量报错，包括头文件等：
+
+2.编辑 ino 文件过程中大量报错，包括头文件等：
 > 在设置中搜索设置 intelli Sense Engine 更改为 Tag parser 
 > 需要注意的是，这一操作也使得cpp 一般错误提示关闭了
 
