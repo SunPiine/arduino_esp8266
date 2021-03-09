@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!-- 上一句使得网页宽高和屏幕适应，结合calc 和 100vw/int 百分比像素，int越小px值越大\
+ 100vw/int=屏幕宽/需要px-->
+
+<head>
+    <title>ON+OFF</title>
+</head>
+<style>
+    .whitebutton {
+        text-align: center;
+        width: calc(100vw / 2);
+        /* 按百分比的宽度 */
+        height: calc(100vw / 2);
+        font-size: calc(100vw / 15);
+        /* 字体大小，同样也是根据浏览器的页面大小决定 */
+        border-radius: 50%;
+        /* 圆角命令，50%时就变成圆了，当然了长和宽要一样大 */
+        outline: none;
+        background-color: white;
+        box-shadow: 30px, 30px, 30px, 30px rgba(255, 255, 255, 0.336);
+    }
+
+    .blackbutton {
+        text-align: center;
+        width: calc(100vw / 2);
+        height: calc(100vw / 2);
+        font-size: calc(100vw / 15);
+        color: white;
+        border-radius: 50%;
+        outline: none;
+        background-color: black;
+        box-shadow: 30px, 30px, 30px, 30px rgba(255, 255, 255, 0.336);
+    }
+
+    .div {
+        margin-top: calc(100vw /2.1);
+        text-align: center;
+    }
+
+    .blackbody {
+        background-color: black;
+    }
+
+    .whitebody {
+        background-color: white;
+    }
+</style>
+
+<body class="blackbody" id="body">
+    <div class="div">
+        <!-- 单击事件 onclick 调用JS 函数send 并传参数value  -->
+        <button class="whitebutton" onclick="send(value)" id="button" value=01001>OFF</button>
+    </div>
+</body>
+<script>
+    var bool = 1;
+    function send(a) {
+        // 实现，点击后变换颜色
+        if (bool == 1) {
+            document.getElementById("button").innerText = "ON";
+            document.getElementById("button").setAttribute("class", "blackbutton");
+            //获取HTML元素通过ID，设置元素属性<class 等>
+            document.getElementById("body").setAttribute("class", "whitebody");
+            bool = 2;
+
+        }
+        else {
+            document.getElementById("button").innerText = "OFF";
+            document.getElementById("button").setAttribute("class", "whitebutton");
+            document.getElementById("body").setAttribute("class", "blackbody");
+            bool = 1;
+        }
+    }
+</script>
+
+</html>
