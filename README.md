@@ -40,4 +40,5 @@
 
 #4.更新日志 
 1.21-03-09：创建WifiClient 项目，提交了相关文件。
-2.21-03-09：修改WiFiLink_class.h 
+2.21-03-09：修改WiFiLink_class.h 添加了get_input() 方法，修改了linking() 方法；创建class_h自定义文件夹，并上传文件。  
+>
