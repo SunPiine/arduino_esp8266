@@ -3,6 +3,7 @@
 #include "WiFilLink_class.h"
 const char *name = "TP-LINK_F196";
 const char *password = "z19981998";
+//增加，捕获输入新WiFi的函数2021-03-10
 WiFiLink mywifi(name, password);
 void setup()
 {
@@ -52,7 +53,6 @@ public:
         linktype = (WiFi.status() == WL_CONNECTED);
         return linktype;
     }
-
     void linking(void) //进行连接操作，最后输出本地IP地址
     {
         WiFi.begin(name, password);
@@ -61,14 +61,46 @@ public:
         do
         {
             bool ledtype = HIGH;
+            bool change = false;
+            String Wifiname;
+            String Wifipassword;
             ledtype = digitalRead(LED_BUILTIN);
             digitalWrite(LED_BUILTIN, !ledtype);
             Serial.print(".");
+            if (Serial.available())
+            //Serial.available() 用来检查串口接受是否准备好，
+            // 即是否有数据已经发送到单片机的Flush，之后再执行动作
+            // 触发时flush已经装填，紧接着的读取动作会读取
+            {
+                get_input(Wifiname, Wifipassword);
+                WiFi.begin(Wifiname.c_str(), Wifipassword.c_str());
+                Serial.println(" ");
+                Serial.print(F("开始连接"));
+            }
             delay(500);
         } while (WiFi.status() != WL_CONNECTED);
         digitalWrite(LED_BUILTIN, LOW);
         Serial.println(" ");
         Serial.println(F("链接成功！"));
         Serial.println(WiFi.localIP());
+    }
+    void get_input(String &n, String &p)
+    //从串口获取字符串，并以String引用的形式传出
+    {
+        Serial.readString();
+        Serial.println("输入Wifi Name：");
+        while (n.length() == 0)
+        {
+            n = Serial.readString();
+        }
+        Serial.println("Wifi Name：");
+        Serial.println(n);
+        Serial.println("输入Wifi Password：");
+        while (p.length() == 0)
+        {
+            p = Serial.readString();
+        }
+        Serial.println("Wifi Password：");
+        Serial.println(p);
     }
 };
