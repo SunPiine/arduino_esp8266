@@ -41,4 +41,6 @@
 #4.更新日志 
 1.21-03-09：创建WifiClient 项目，提交了相关文件。
 2.21-03-09：修改WiFiLink_class.h 添加了get_input() 方法，修改了linking() 方法；创建class_h自定义文件夹，并上传文件。  
->
+>1. get_input(String &str1,String &str2) 方法，从串口读取字符串wifiname 和 wifipassword 
+>2.修改linking() 方法，使用get_input() 方法，在连接完成前在串口输入任意字符串，即可让8266开始从串口读取新的wifi 登录信息，包括提示。
+>3.
