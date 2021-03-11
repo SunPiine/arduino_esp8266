@@ -5,4 +5,8 @@
 4. 截止目前还未与HTML具体连接通信21-03-09
 5. 参考书目《Web前端开发技术》章慧，南京大学出版社
 6. 已经可以实现客户端和网页通讯21-03-11 
-7. 程序实现控制ESP-8266F 的板载LED wifi网络开关控制
+7. 程序实现控制ESP-8266F 的板载LED wifi网络开关控制  
+8. HTML 通过<a></a> 标签以更换网址方式通讯  
+9. <a href=yourURLString > 我把按钮实现放在此处 <a>
+10. URLString 一般为 ./Webstute?variate=value 
+11. Webstute 在客户端被server.on() 方法捕捉（以Sting） ，value被server.arg(aritate) 方法返回
