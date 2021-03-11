@@ -55,5 +55,4 @@
 >
 >2.在html 中使用 ```<a> <a>```
 >
-> 3.具体见![image](https://user-images.githubusercontent.com/75567322/110815059-09d42b80-82c5-11eb-9c9b-3cc605b84c8b.png)
 
